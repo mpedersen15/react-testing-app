@@ -24,14 +24,13 @@ describe('CommentList component', () => {
     });
 
     it('should show the text for each comment', () => {
-        console.log(wrapper.render().text());
-
         expect(wrapper.render().text()).toContain('comment 1');
         expect(wrapper.render().text()).toContain('comment 2');
         expect(wrapper.render().text()).toContain('comment 3');
 
+        // Another way to do it...
         wrapper.find('li').forEach((node, index) => {
-            expect(node.text()).toBe(initialState.comments[index]);
-        })
+            expect(node.render().text()).toBe(initialState.comments[index]);
+        });
     })
 });
