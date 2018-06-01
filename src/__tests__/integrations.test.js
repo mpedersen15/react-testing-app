@@ -33,7 +33,6 @@ it('should fetch a list of comments and display them', (done) => {
     wrapper.find('.fetch-comments').simulate('click');
     moxios.wait(() => {
         wrapper.update();
-        console.log(wrapper.find('li'));
         expect(wrapper.find('li').length).toBe(3);
         done();
         wrapper.unmount();
